@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sidebar Menu</title> 
+<!--    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+    
+ </head>
+<body>
+
+  <div class="navigation">
+    
+    <ul>
+        <li>
+                <a href="#">
+                    <span class="icon"></span>
+                    <span class="title">Employee Portal</span>
+                </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icon"></span>
+                <span class="title">Home</span>
+            </a>
+         </li>
+    
+            <li>
+                   
+        <a >
+            <span class="icon"></span>
+            <span class="title">Employee Dashboard</span>
+        </a>
+        </li>
+
+        
+
+         <li>
+            <a href="#">
+                <span class="icon"></span>
+                <span class="title">Sign Out</span>
+            </a>
+         </li>
+
+    </ul>
+
+    <div class="toggle" id="tog" (click)="toggle()"></div>
+
+  </div> 
+
+  <div class="wrapper">
+    <h3>Employee Profile</h3>
+<div class="team">
+    <div class="team_members">
+        
+        <p class="role">Employee Name : {{emppro.ENAME}}</p>
+        <p class="role">Employee No : {{emppro.PERNR}} </p>
+        <p class="role">Name : {{emppro.ENAME}}</p>
+        <p class="role">specialization : {{emppro.ORGEH_TXT}}</p>
+        <address class="role">
+          <p>Address</p>
+          STREET:{{emppro.STRAS}},<br>
+          CITY:{{emppro.ORT01}},DISTRICT:{{emppro.ORT01}},<br>
+          COUNTRY:{{emppro.LAND}},<br>
+          TELENUM:{{emppro.TELNR}}
+                  
+        </address>
+    </div>
+</div>
+</div>
+
+
+<h1 class="h1">Employee Pay Slip Data</h1>
+  <br>
+  <table border="3" class="tab">
+    <thead>
+    <tr>
+        <th>Feature Pack Begin</th>
+        <th>Feature Pack End</th>
+        <th>Feature Pack Period</th>
+        <th>Pay Date</th>
+        <th>Payment Type</th>
+      <th>get PDF</th> 
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pay of empslip">
+        <td #val> {{pay.FPBEGIN}}</td>
+        <td>{{pay.FPEND}}</td>
+        <td>{{pay.FPPERIOD}}</td>
+        <td>{{pay.PAYDATE}}</td>
+        <td>{{pay.PAYTYPE_TEXT}}</td>
+        <td><Button class="btn btn-dark" (click)="downloadPdf()">Get pdf</Button></td>
+    </tr>
+</tbody>
+  </table>
+
+  <br>
+  <h1 class="h1">Employee Leave Data</h1>
+  <br>
+  <table border="3" class="tab">
+    <thead>
+    <tr>
+        <th>Employee No</th>
+        <th>Absent Days</th>
+        <th>Absent Hours</th>
+        <th>Absence Type</th>
+        <th>Leave Start Date</th>
+        <th>Leave End Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let leave of empleave">
+        <td>{{leave.EMPLOYEENO}}</td>
+        <td>{{leave.ABSENCEDAYS}}</td>
+        <td>{{leave.ABSENCEHOURS}}</td>
+        <td>{{leave.NAMEOFABSENCETYPE}}</td>
+        <td>{{leave.VALIDBEGIN}}</td>
+        <td>{{leave.VALIDEND}}</td>
+    </tr>
+</tbody>
+  </table>
+  <br>
+  <br>
+
+
+
+
+</body>
+</html> 

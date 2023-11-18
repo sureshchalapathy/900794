@@ -1,0 +1,55 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="portalportal.controller.View2"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Product Order list">
+				<content>
+					<Button press='onbclick' text='Planned Order list'></Button>
+					<VBox alignItems="Center" alignContent='Center' fitContainer='true'>
+					<items>
+					<Table id="Mara" items="{/results}">
+					  <columns>
+					    <Column>
+					      <Text text="Order No" />
+					    </Column>
+					    <Column>
+					      <Text text="Plant" />
+					    </Column>
+					    <Column>
+					      <Text text="Target Quantity" />
+					    </Column>
+					     <Column>
+					      <Text text="Finish Date" />
+					    </Column>
+					     <Column>
+					      <Text text="Start Date" />
+					    </Column>
+					     <Column>
+					      <Text text="Entered By" />
+					    </Column>
+					     <Column>
+					      <Text text="Order Type" />
+					    </Column>
+					  </columns>
+					  <items>
+					    <ColumnListItem>
+					      <cells>
+					         <Text text="{OrderNumber}"></Text>
+					        <Text text="{ProductionPlant}"></Text> 
+					        <Text text="{TargetQuantity}" ></Text>
+					        <Text text="{FinishDate}"></Text> 
+					        <Text text="{StartDate}" ></Text>
+					        <Text text="{EnteredBy}" ></Text>
+					        <Text text="{OrderType}" ></Text>
+					      </cells>
+					    </ColumnListItem>
+					  </items>
+					</Table>
+				</items>
+				</VBox>
+				</content>
+			
+			</Page>
+		</pages>
+	</App>
+	</mvc:View>

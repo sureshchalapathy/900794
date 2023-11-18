@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sidebar Menu</title> 
+<!--    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+    
+ </head>
+<body>
+
+  <div class="navigation">
+    
+    <ul>
+        <li>
+                <a href="#">
+                    <span class="icon"></span>
+                    <span class="title">Customer Portal</span>
+                </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icon"></span>
+                <span class="title">Home</span>
+            </a>
+         </li>
+
+        <li>
+
+            <li>
+                <a (click)="custproview()">
+                    <span class="icon"></span>
+                    <span class="title">Customer Profile View</span>
+                </a>
+             </li>
+    
+            <li>
+                   
+        <a (click)="custdash()">
+            <span class="icon"></span>
+            <span class="title">Customer Dashboard</span>
+        </a>
+        </li>
+
+        <li>
+            <a (click)="FinSheet()">
+                <span class="icon"></span>
+                <span class="title">Customer Financial Sheet </span>
+            </a>
+         </li>
+
+         <li>
+            <a href="#">
+                <span class="icon"></span>
+                <span class="title">Sign Out</span>
+            </a>
+         </li>
+
+    </ul>
+
+    <div class="toggle" id="tog" (click)="toggle()"></div>
+
+  </div> 
+
+  <h1 class="h1">Credit</h1>
+  <br>
+  <table border="3" class="tab">
+    <thead>
+    <tr>
+        <th>Customer Name</th>
+        <th>Company Code</th>
+        <th>Billing Type</th>
+        <th>Billing Category</th>
+        <th>Net Value</th>
+        <th>Foreign Trade Information</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let credit of creditData">
+        
+        <td>{{credit.ERNAM}}</td>
+        <td>{{credit.BUKRS}}</td>
+        <td>{{credit.FKART}}</td>
+        <td>{{credit.FKTYP}}</td>
+        <td>{{credit.NETWR}}</td>
+        <td>{{credit.EXNUM}}</td> 
+        
+    </tr>
+</tbody>
+  </table>
+
+
+
+  <br>
+  <h1 class="h1">Debit</h1>
+  <br>
+  <table border="3" class="tab">
+    <thead>
+    <tr>
+        <th>Customer Name</th>
+        <th>Company Code</th>
+        <th>Billing Type</th>
+        <th>Billing Category</th>
+        <th>Net Value</th>
+        <th>Foreign Trade Information</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let debit of debitData">
+        <td>{{debit.ERNAM}}</td>
+        <td>{{debit.BUKRS}}</td>
+        <td>{{debit.FKART}}</td>
+        <td>{{debit.FKTYP}}</td>
+        <td>{{debit.NETWR}}</td>
+        <td>{{debit.EXNUM}}</td> 
+    </tr>
+</tbody>
+  </table>
+
+  <br>
+  <h1 class="h1">Invoice</h1>
+  <br>
+  <table border="3" class="tab">
+    <thead>
+    <tr>
+        <th>Customer </th>
+        <th>Amount</th>
+        <th>Purchasing Information</th>
+        <th>Document No</th>
+        <th>Currency</th>
+       
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let invoice of invoiceData">
+        <td>{{invoice.KUNAG}}</td>
+        <td>{{invoice.NETWR}}</td>
+        <td>{{invoice.AEDAT}}</td>
+        <td>{{invoice.VBELN}}</td>
+        <td>{{invoice.WAERK}}</td>
+
+        
+    </tr>
+</tbody>
+  </table>
+
+
+  <br>
+  <h1 class="h1">Payment aging</h1>
+  <br>
+  <table border="3" class="tab">
+    <thead>
+    <tr>
+        <th>Company Code</th>
+        <th>Reference Document</th>
+        <th>Documentation Date</th>
+        <th>Entry Date</th>
+        <th>Payment Age</th>
+        <th>Amount</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let payment of paymentData">
+        <td>{{payment.CUSTOMER}}</td>
+        <td>{{payment.REF_DOC}}</td>
+        
+        <td>{{payment.DOC_DATE}}</td>
+        <td>{{payment.ENTRY_DATE}}</td>
+        <td>{{payment.CLEAR_DATE}}</td>
+        <td>{{payment.AMOUNT}}</td>
+        
+    </tr>
+</tbody>
+  </table>
+
+
+
+
+
+</body>
+</html> 

@@ -1,0 +1,60 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="portalportal.controller.view4"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+		
+					<Page title="Incident Details">
+				<content>
+					<Button press='ondclick' text='Inspection Lot List '></Button>
+					<Button press='oncclick' text='Incident  Details'></Button>
+					<Button press='onbclick' text='Result Records '></Button>
+					<Button press='onuclick' text='Usage  Details'></Button>
+					<Button press='oneclick' text='Logout'></Button>
+					<VBox alignItems="Center" alignContent='Center' fitContainer='true'>
+					<items>
+					<Table id="Mara" items="{/results}">
+					  <columns>
+					    <Column>
+					      <Text text="Ins.lot Number" />
+					    </Column>
+					    <Column>
+					      <Text text="Obj.No" />
+					    </Column>
+					    <Column>
+					      <Text text="Created by" />
+					    </Column>
+					     <Column>
+					      <Text text="Ins.Started" />
+					    </Column>
+					     <Column>
+					      <Text text="Vendor" />
+					    </Column>
+					     <Column>
+					      <Text text="Purchase org." />
+					    </Column>
+					    <Column>
+					      <Text text="Po Num" />
+					    </Column>
+					  </columns>
+					  <items>
+					    <ColumnListItem>
+					      <cells>
+					      	<Text text="{Insplot}"></Text>
+					        <Text text="{ObjectNo}"></Text>
+					        <Text text="{CreatedByUser}"></Text> 
+					        <Text text="{InspectionStartsOnDate}" ></Text>
+					        <Text text="{Vendor}" ></Text>
+					        <Text text="{PurchOrg}" ></Text>
+					        <Text text="{PoNumber}" ></Text>
+					      </cells>
+					    </ColumnListItem>
+					  </items>
+					</Table>
+				</items>
+				</VBox>
+				</content>
+			</Page>
+			
+		</pages>
+	</App>
+</mvc:View>

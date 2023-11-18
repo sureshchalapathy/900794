@@ -1,0 +1,66 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="portalportal.controller.view5"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Usage Details">
+				<content>
+					<Button press='ondclick' text='Inspection Lot List '></Button>
+					<Button press='oncclick' text='Incident  Details'></Button>
+					<Button press='onbclick' text='Result Records '></Button>
+					<Button press='onuclick' text='Usage  Details'></Button>
+					<Button press='oneclick' text='Logout'></Button>
+					<VBox alignItems="Center" alignContent='Center' fitContainer='true'>
+					<items>
+					<Table id="Mara" items="{/results}">
+					  <columns>
+					    <Column>
+					      <Text text="Ins.lot Number" />
+					    </Column>
+					    <Column>
+					      <Text text="Plant" />
+					    </Column>
+					    <Column>
+					      <Text text="Created on" />
+					    </Column>
+					     <Column>
+					      <Text text="Vendor" />
+					    </Column>
+					     <Column>
+					      <Text text="Material" />
+					    </Column>
+					     <Column>
+					      <Text text="Mat Detail." />
+					    </Column>
+					    <Column>
+					      <Text text="Po Num" />
+					    </Column>
+					    <Column>
+					      <Text text="Doc No." />
+					    </Column>
+					    <Column>
+					      <Text text="DocYear." />
+					    </Column>
+					  </columns>
+					  <items>
+					    <ColumnListItem>
+					      <cells>
+					      	<Text text="{Insplot}"></Text>
+					        <Text text="{Plant}"></Text>
+					        <Text text="{CreatDat}"></Text> 
+					        <Text text="{Vendor}" ></Text>
+					        <Text text="{Material}" ></Text>
+					        <Text text="{TxtMat}" ></Text>
+					        <Text text="{PoNumber}" ></Text>
+							<Text text="{MatDoc}" ></Text>
+							<Text text="{DocYear}" ></Text>
+					      </cells>
+					    </ColumnListItem>
+					  </items>
+					</Table>
+				</items>
+				</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

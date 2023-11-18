@@ -1,0 +1,19 @@
+<mvc:View controllerName="portalportal.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App id="app">
+		<pages>
+			<Page title="Welcome To Quality Portal">
+				<content>
+					<VBox justifyContent='Center' alignItems='Center' alignContent='Center' fitContainer='true'>
+					<items>
+					<Label text ='User Credentials'></Label>
+					<Input id="user" placeholder="Enter your Username"></Input>
+					<Input id="pass" type="Password" placeholder="Enter your Password"></Input>
+					<Button press='onClick' text='Login'></Button>
+					</items>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

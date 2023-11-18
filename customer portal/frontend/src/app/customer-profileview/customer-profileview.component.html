@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sidebar Menu</title> 
+<!--    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+    
+ </head>
+<body>
+
+  <div class="navigation">
+    
+    <ul>
+        <li>
+                <a href="#">
+                    <span class="icon"></span>
+                    <span class="title">Customer Portal</span>
+                </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icon"></span>
+                <span class="title">Home</span>
+            </a>
+         </li>
+
+        <li>
+
+            <li>
+                <a (click)="custproview()">
+                    <span class="icon"></span>
+                    <span class="title">Customer Profile View</span>
+                </a>
+             </li>
+    
+            <li>
+                   
+        <a (click)="custdash()">
+            <span class="icon"></span>
+            <span class="title">Customer Dashboard</span>
+        </a>
+        </li>
+
+        <li>
+            <a (click)="FinSheet()">
+                <span class="icon"></span>
+                <span class="title">Customer Financial Sheet </span>
+            </a>
+         </li>
+
+         <li>
+            <a href="#">
+                <span class="icon"></span>
+                <span class="title">Sign Out</span>
+            </a>
+         </li>
+
+    </ul>
+
+    <div class="toggle" id="tog" (click)="toggle()"></div>
+
+  </div> 
+
+  <div class="wrapper">
+    <h3>Customer Profile</h3>
+<div class="team">
+    <div class="team_members">
+        
+        <p class="role">Customer Name : {{custpro.NAME1}}</p>
+        <p class="role">Customer No : {{custpro.KUNNR}} </p>
+        <address class="role">
+          <p >Address</p>
+          
+          CITY:{{custpro.ORT01}},<br>
+          COUNTRY:{{custpro.COUNTRY}}
+                  
+        </address>
+    </div>
+</div>
+</div>
+
+</body>
+</html> 

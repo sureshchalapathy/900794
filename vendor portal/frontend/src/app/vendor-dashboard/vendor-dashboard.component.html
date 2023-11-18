@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sidebar Menu</title> 
+<!--    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+    
+ </head>
+<body>
+
+  <div class="navigation">
+    
+    <ul>
+        <li>
+                <a href="#">
+                    <span class="icon"></span>
+                    <span class="title">Vendor Portal</span>
+                </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icon"></span>
+                <span class="title">Home</span>
+            </a>
+         </li>
+
+        <li>
+
+            <li>
+                <a (click)="venproview()">
+                    <span class="icon"></span>
+                    <span class="title">Vendor Profile View</span>
+                </a>
+             </li>
+    
+            <li>
+                   
+        <a (click)="vendash()">
+            <span class="icon"></span>
+            <span class="title">Vendor Dashboard</span>
+        </a>
+        </li>
+
+        <li>
+            <a (click)="venFinSheet()">
+                <span class="icon"></span>
+                <span class="title">Vendor Financial Sheet </span>
+            </a>
+         </li>
+
+         <li>
+            <a href="#">
+                <span class="icon"></span>
+                <span class="title">Sign Out</span>
+            </a>
+         </li>
+
+    </ul>
+
+    <div class="toggle" id="tog" (click)="toggle()"></div>
+
+  </div> 
+<!-- 
+  <script>
+   let navigation = document.querySelector('.navigation');
+   let toggle = document.querySelector('.toggle')
+   toggle.onclick = function(){
+    navigation.classList.toggle('active')
+   }
+
+  </script> -->
+  <h1 class="h1">Request for Quotation</h1>
+  <div class="center" *ngIf="spinner">
+
+    <div class="wave"></div>
+
+    <div class="wave"></div>
+
+    <div class="wave"></div>
+
+    <div class="wave"></div>
+
+    <div class="wave"></div>
+
+    <div class="wave"></div>
+
+    <div class="wave"></div>
+
+    <div class="wave"></div>
+
+    <div class="wave"></div>
+
+    <div class="wave"></div>
+
+  </div>  
+
+ <div style="height:20px; width:100%; clear:both;"></div>
+  <br>
+  <table border="3" class="tab">
+    <thead>
+    <tr>
+        <th>Purchasing information</th>
+        <th>Vendor Name</th>
+        
+        <th>Language</th>
+        <th>Submission Deadline</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let request of rfq">
+        <td>{{request.EBELN}}</td>
+        <td>{{request.ERNAM}}</td>
+        
+        <td>{{request.SPRAS}}</td>
+        <td>{{request.KDATB}}</td>
+    </tr>
+</tbody>
+  </table>
+
+  <br>
+  <h1 class="h1">Purchase Order</h1>
+  <br>
+  
+  <table border="3" class="tab">
+    <thead>
+    <tr>
+        <th (click)="sortPurchases('purchaseNumber')">Purchace Number {{ getSortArrow() }}</th>
+        
+        <th (click)="sortPurchases('productPurchased')">Product Purchased  {{ getSortArrow() }}</th>
+        <th>Store location</th>
+        <th (click)="sortPurchases('quantity')">Quantity {{ getSortArrow() }}</th>
+      <th (click)="sortPurchases('price')">Price {{ getSortArrow() }}</th>
+        <th (click)="sortPurchases('shorttext')">Short Text {{ getSortArrow() }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let purchase of purchaseorder">
+        <td>{{purchase.PO_NUMBER}}</td>
+        <td>{{purchase.PO_ITEM}}</td>
+        <td>{{purchase.STORE_LOC}}</td>
+        <td>{{purchase.DISP_QUAN}}</td>
+        <td>{{purchase.NET_PRICE}}</td>
+        <td>{{purchase.SHORT_TEXT}}</td>
+    </tr>
+</tbody>
+  </table>
+
+<br>
+<h1 class="h1">Goods Receipt</h1>
+<br>
+
+<table border="3" class="tab">
+    <thead>
+    <tr>
+        <th>Material Document information</th>
+        <th>Entry Date</th>
+        <th>Document Year</th>
+        <th>User Name</th>
+        <th>Posting Date</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let gs of goodsreceipt">
+        <td>{{gs.MAT_DOC}}</td>
+        <td>{{gs.ENTRY_DATE}}</td>
+        <td>{{gs.DOC_YEAR}}</td>
+        <td>{{gs.USERNAME}}</td>
+        <td>{{gs.PSTNG_DATE}}</td>
+       
+    </tr>
+</tbody>
+  </table>
+
+
+
+</body>
+</html> 
+

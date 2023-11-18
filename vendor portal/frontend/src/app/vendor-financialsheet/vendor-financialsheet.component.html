@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sidebar Menu</title> 
+<!--    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+    
+ </head>
+<body>
+
+  <div class="navigation">
+    
+    <ul>
+        <li>
+                <a href="#">
+                    <span class="icon"></span>
+                    <span class="title">Vendor Portal</span>
+                </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icon"></span>
+                <span class="title">Home</span>
+            </a>
+         </li>
+
+        <li>
+
+            <li>
+                <a (click)="venproview()">
+                    <span class="icon"></span>
+                    <span class="title">Vendor Profile View</span>
+                </a>
+             </li>
+    
+            <li>
+                   
+        <a (click)="vendash()">
+            <span class="icon"></span>
+            <span class="title">Vendor Dashboard</span>
+        </a>
+        </li>
+
+        <li>
+            <a (click)="venFinSheet()">
+                <span class="icon"></span>
+                <span class="title">Vendor Financial Sheet </span>
+            </a>
+         </li>
+
+         <li>
+            <a href="#">
+                <span class="icon"></span>
+                <span class="title">Sign Out</span>
+            </a>
+         </li>
+
+    </ul>
+
+    <div class="toggle" id="tog" (click)="toggle()"></div>
+
+  </div> 
+<!-- 
+  <script>
+   let navigation = document.querySelector('.navigation');
+   let toggle = document.querySelector('.toggle')
+   toggle.onclick = function(){
+    navigation.classList.toggle('active')
+   }
+
+  </script> -->
+  <h1 class="h1">Credit</h1>
+  <br>
+  <table border="3" class="tab">
+    <thead>
+    <tr>
+        <th>Document No</th>
+        <th>Vendor</th>
+        <th>Company Code</th>
+        <th>Credit Amount</th>
+        <th>Currency</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let credit of vencredit">
+        <td>{{credit.DOC_NO}}</td>
+        <td>{{credit.VENDOR}}</td>
+        <td>{{credit.COMP_CODE}}</td>
+        <td>{{credit.DISC_BASE}}</td>
+        <td>{{credit.LOC_CURRCY}}</td> 
+        
+    </tr>
+</tbody>
+  </table>
+
+  <br>
+  <h1 class="h1">Debit</h1>
+  <br>
+  <table border="3" class="tab">
+    <thead>
+    <tr>
+        <th>Document No</th>
+        <th>Purchasing Document Number</th>
+        <th>Debit Value</th>
+        <th>Currency</th>
+        <th>Year</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let debit of vendebit">
+        <td>{{debit.DOC_NO}}</td>
+        <td>{{debit.REF_DOC}}</td>
+        <td>{{debit.LC_AMOUNT}}</td>
+        <td>{{debit.LOC_CURRCY}}</td>
+        <td>{{debit.FISC_YEAR}}</td> 
+    </tr>
+</tbody>
+  </table>
+
+  <br>
+  <h1 class="h1">Invoice</h1>
+  <br>
+  <table border="3" class="tab">
+    <thead>
+    <tr>
+        <th>Company Code </th>
+        <th>Documentation Date</th>
+        <th>Gross Amount</th>
+        <th>Invoice No</th>
+        <th>Currency</th>
+       
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let invoice of veninvoice">
+        <td>{{invoice.COMP_CODE}}</td>
+        <td>{{invoice.DOC_DATE}}</td>
+        <td>{{invoice.GROSS_AMNT}}</td>
+        <td>{{invoice.INV_DOC_NO}}</td>
+        <td>{{invoice.CURRENCY}}</td>
+
+        
+    </tr>
+</tbody>
+  </table>
+
+
+  <br>
+  <h1 class="h1">Payment aging</h1>
+  <br>
+  <table border="3" class="tab">
+    <thead>
+    <tr>
+        <th>Company Code</th>
+        <th>Reference Document</th>
+        <th>Documentation Date</th>
+        <th>Entry Date</th>
+        <th>Payment Age</th>
+        <th>Amount</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let payment of venpayment">
+        <td>{{payment.COMP_CODE}}</td>
+        <td>{{payment.REF_DOC}}</td>
+        <td>{{payment.DOC_DATE}}</td>
+        <td>{{payment.ENTRY_DATE}}</td>
+        <td>{{payment.CLEAR_DATE}}</td>
+        <td>${{payment.AMOUNT}}</td>
+        
+    </tr>
+</tbody>
+  </table>
+
+
+
+
+
+</body>
+</html> 
